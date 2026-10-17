@@ -1,0 +1,115 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Snack Dealer Admin</title>
+
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="admin.js"></script>
+
+  <style>
+    .admin-container {
+      max-width: 850px;
+      margin: 30px auto;
+      padding: 20px;
+    }
+
+    .back-button {
+      display: inline-block;
+      padding: 12px 20px;
+      margin-bottom: 25px;
+      background: #111827;
+      color: white;
+      text-decoration: none;
+      border: 1px solid #00d2be;
+      border-radius: 12px;
+      font-weight: bold;
+      transition: 0.2s;
+    }
+
+    .back-button:hover {
+      background: #064e4a;
+      transform: translateX(-4px);
+    }
+
+    #admin-status {
+      margin-top: 20px;
+      overflow-wrap: anywhere;
+    }
+
+    #login-form {
+      display: grid;
+      gap: 12px;
+    }
+
+    #login-form input,
+    #login-form button,
+    #logout {
+      padding: 12px;
+      border-radius: 8px;
+    }
+
+    #orders {
+      margin-top: 20px;
+    }
+
+    #orders select {
+      padding: 8px;
+      margin-top: 8px;
+    }
+
+    [hidden] {
+      display: none !important;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>🔐 SNACK DEALER ADMIN</h1>
+    <p>Authorized staff only</p>
+  </header>
+
+  <main class="admin-container">
+    <a href="index.html" class="back-button">
+      ← Back to Store
+    </a>
+
+    <section id="login" class="cart">
+      <h2>Admin Login</h2>
+
+      <form id="login-form">
+        <input
+          id="email"
+          name="email"
+          type="email"
+          placeholder="Admin email"
+          autocomplete="username"
+          required
+        >
+
+        <input
+          id="password"
+          name="password"
+          type="password"
+          placeholder="Password"
+          autocomplete="current-password"
+          required
+        >
+
+        <button type="submit">Log In</button>
+      </form>
+    </section>
+
+    <section id="dashboard" class="cart" hidden>
+      <h2>📦 Customer Orders</h2>
+      <button id="logout" type="button">Log Out</button>
+      <div id="orders" aria-live="polite"></div>
+    </section>
+
+    <p id="admin-status" role="status" aria-live="polite"></p>
+  </main>
+</body>
+</html>
